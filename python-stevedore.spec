@@ -3,8 +3,8 @@
 %endif
 
 Name:           python-stevedore
-Version:        0.15
-Release:        3%{?dist}
+Version:        1.0.0
+Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -89,6 +89,9 @@ popd
 %{python3_sitelib}/stevedore-%{version}-py?.?.egg-info
 
 %changelog
+* Mon Sep 22 2014 Alan Pevec <alan.pevec@redhat.com> 1.0.0-1
+- Update to upstream 1.0.0
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.15-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
