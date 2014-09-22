@@ -18,8 +18,10 @@ BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
 BuildRequires:  python-nose
 BuildRequires:  python-mock
+BuildRequires:  python-six
 
 Requires:       python-setuptools
+Requires:       python-six
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
@@ -27,6 +29,7 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
 BuildRequires:  python3-nose
 BuildRequires:  python3-mock
+BuildRequires:  python3-six
 %endif
 
 %description
@@ -38,6 +41,7 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 
 Requires:       python3-setuptools
+Requires:       python-six
 
 %description -n python3-stevedore
 Manage dynamic plugins for Python applications
