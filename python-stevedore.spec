@@ -87,10 +87,12 @@ popd
 %{python_sitelib}/stevedore
 %{python_sitelib}/stevedore-%{version}-py?.?.egg-info
 
+%if 0%{?with_python3}
 %files -n python3-stevedore
 %doc README.rst LICENSE
 %{python3_sitelib}/stevedore
 %{python3_sitelib}/stevedore-%{version}-py?.?.egg-info
+%endif
 
 %changelog
 * Mon Sep 22 2014 Alan Pevec <alan.pevec@redhat.com> 1.0.0-1
