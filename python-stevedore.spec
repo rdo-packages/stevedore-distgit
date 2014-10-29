@@ -16,9 +16,11 @@ BuildArch:      noarch
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
-BuildRequires:  python-nose
 BuildRequires:  python-mock
 BuildRequires:  python-six
+BuildRequires:  python-testrepository
+#BuildRequires:  python-discover
+#BuildRequires:  python-oslotest
 
 Requires:       python-setuptools
 Requires:       python-six
@@ -27,9 +29,11 @@ Requires:       python-six
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
-BuildRequires:  python3-nose
 BuildRequires:  python3-mock
 BuildRequires:  python3-six
+#BuildRequires:  python3-testrepository
+#BuildRequires:  python3-discover
+#BuildRequires:  python3-oslotest
 %endif
 
 %description
@@ -74,13 +78,15 @@ popd
 %{__python} setup.py install --skip-build --root %{buildroot}
 
 %check
-PYTHONPATH=. nosetests
-
-%if 0%{?with_python3}
-pushd %{py3dir}
-PYTHONPATH=. nosetests-%{python3_version}
-popd
-%endif
+#TODO: reenable when commented test requirements above are available
+#
+#PYTHONPATH=. nosetests
+#
+#%if 0%{?with_python3}
+#pushd %{py3dir}
+#PYTHONPATH=. nosetests-%{python3_version}
+#popd
+#%endif
 
 %files
 %doc README.rst LICENSE
