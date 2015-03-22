@@ -4,7 +4,7 @@
 
 Name:           python-stevedore
 Version:        1.2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -24,6 +24,7 @@ BuildRequires:  python-testrepository
 
 Requires:       python-setuptools
 Requires:       python-six
+Requires:       python-pbr
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
@@ -45,7 +46,8 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 
 Requires:       python3-setuptools
-Requires:       python-six
+Requires:       python3-six
+Requires:       python3-pbr
 
 %description -n python3-stevedore
 Manage dynamic plugins for Python applications
@@ -101,6 +103,9 @@ popd
 %endif
 
 %changelog
+* Sun Mar 22 2015 Ralph Bean <rbean@redhat.com> - 1.2.0-2
+- Require python-pbr at runtime now.
+
 * Sat Feb 21 2015 Ralph Bean <rbean@redhat.com> - 1.2.0-1
 - new version
 
