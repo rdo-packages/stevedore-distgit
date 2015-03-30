@@ -4,7 +4,7 @@
 
 Name:           python-stevedore
 Version:        1.2.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -56,6 +56,9 @@ Manage dynamic plugins for Python applications
 %prep
 %setup -q -n stevedore-%{version}
 
+# Remove setuptools dep.  We'll supply the rpm on epel.
+sed -i '/argparse/d' requirements.txt
+
 %if 0%{?with_python3}
 rm -rf %{py3dir}
 cp -a . %{py3dir}
@@ -103,6 +106,9 @@ popd
 %endif
 
 %changelog
+* Mon Mar 30 2015 Ralph Bean <rbean@redhat.com> - 1.2.0-3
+- Remove erroneous setuptools runtime dep on python-argparse.
+
 * Sun Mar 22 2015 Ralph Bean <rbean@redhat.com> - 1.2.0-2
 - Require python-pbr at runtime now.
 
