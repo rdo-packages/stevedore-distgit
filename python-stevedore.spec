@@ -3,8 +3,8 @@
 %endif
 
 Name:           python-stevedore
-Version:        1.2.0
-Release:        3%{?dist}
+Version:        1.3.0
+Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -65,7 +65,7 @@ cp -a . %{py3dir}
 %endif
 
 %build
-%{__python} setup.py build
+%{__python2} setup.py build
 
 %if 0%{?with_python3}
 pushd %{py3dir}
@@ -80,7 +80,7 @@ pushd %{py3dir}
 popd
 %endif
 
-%{__python} setup.py install --skip-build --root %{buildroot}
+%{__python2} setup.py install --skip-build --root %{buildroot}
 
 %check
 #TODO: reenable when commented test requirements above are available
@@ -94,18 +94,23 @@ popd
 #%endif
 
 %files
-%doc README.rst LICENSE
-%{python_sitelib}/stevedore
-%{python_sitelib}/stevedore-%{version}-py?.?.egg-info
+%license LICENSE
+%doc README.rst
+%{python2_sitelib}/stevedore
+%{python2_sitelib}/stevedore-%{version}-py?.?.egg-info
 
 %if 0%{?with_python3}
 %files -n python3-stevedore
-%doc README.rst LICENSE
+%license LICENSE
+%doc README.rst
 %{python3_sitelib}/stevedore
 %{python3_sitelib}/stevedore-%{version}-py?.?.egg-info
 %endif
 
 %changelog
+* Tue Mar 31 2015 Alan Pevec <apevec@redhat.com> - 1.3.0-1
+- new version
+
 * Mon Mar 30 2015 Ralph Bean <rbean@redhat.com> - 1.2.0-3
 - Remove erroneous setuptools runtime dep on python-argparse.
 
