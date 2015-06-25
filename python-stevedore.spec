@@ -3,8 +3,8 @@
 %endif
 
 Name:           python-stevedore
-Version:        1.3.0
-Release:        2%{?dist}
+Version:        1.5.0
+Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -56,8 +56,8 @@ Manage dynamic plugins for Python applications
 %prep
 %setup -q -n stevedore-%{version}
 
-# Remove setuptools dep.  We'll supply the rpm on epel.
-sed -i '/argparse/d' requirements.txt
+# let RPM handle deps
+rm -f requirements.txt
 
 %if 0%{?with_python3}
 rm -rf %{py3dir}
@@ -108,6 +108,9 @@ popd
 %endif
 
 %changelog
+* Thu Jun 25 2015 Alan Pevec <alan.pevec@redhat.com> 1.5.0-1
+- Update to upstream 1.5.0
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.3.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
