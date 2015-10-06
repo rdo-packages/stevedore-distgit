@@ -3,7 +3,7 @@
 %endif
 
 Name:           python-stevedore
-Version:        1.7.0
+Version:        1.8.0
 Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
@@ -108,6 +108,9 @@ popd
 %endif
 
 %changelog
+* Tue Oct 06 2015 Alan Pevec <alan.pevec@redhat.com> 1.8.0-1
+- Update to upstream 1.8.0
+
 * Tue Aug 18 2015 Alan Pevec <alan.pevec@redhat.com> 1.7.0-1
 - Update to upstream 1.7.0
 
