@@ -4,7 +4,7 @@
 
 Name:           python-stevedore
 Version:        1.8.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -108,6 +108,9 @@ popd
 %endif
 
 %changelog
+* Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.8.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
+
 * Tue Oct 06 2015 Alan Pevec <alan.pevec@redhat.com> 1.8.0-1
 - Update to upstream 1.8.0
 
