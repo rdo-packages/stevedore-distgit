@@ -4,7 +4,7 @@
 
 Name:           python-stevedore
 Version:        1.8.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -13,18 +13,14 @@ URL:            https://github.com/dreamhost/stevedore
 Source0:        http://pypi.python.org/packages/source/s/stevedore/stevedore-%{version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  python-devel
-BuildRequires:  python-setuptools
+BuildRequires:  python2-devel
+BuildRequires:  python2-setuptools
 BuildRequires:  python-pbr
 BuildRequires:  python-mock
 BuildRequires:  python-six
 BuildRequires:  python-testrepository
 #BuildRequires:  python-discover
 #BuildRequires:  python-oslotest
-
-Requires:       python-setuptools
-Requires:       python-six
-Requires:       python-pbr
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
@@ -40,10 +36,23 @@ BuildRequires:  python3-six
 %description
 Manage dynamic plugins for Python applications
 
+%package -n python2-stevedore
+Summary:        Manage dynamic plugins for Python applications
+Group:          Development/Libraries
+%{?python_provide:%python_provide python2-%{module}}
+
+Requires:       python2-setuptools
+Requires:       python-six
+Requires:       python-pbr
+
+%description -n python2-stevedore
+Manage dynamic plugins for Python applications
+
 %if 0%{?with_python3}
 %package -n python3-stevedore
 Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
+%{?python_provide:%python_provide python3-%{module}}
 
 Requires:       python3-setuptools
 Requires:       python3-six
@@ -93,7 +102,7 @@ popd
 #popd
 #%endif
 
-%files
+%files -n python2-stevedore
 %license LICENSE
 %doc README.rst
 %{python2_sitelib}/stevedore
@@ -108,6 +117,9 @@ popd
 %endif
 
 %changelog
+* Mon Nov 16 2015 Ralph Bean <rbean@redhat.com> - 1.8.0-3
+- Provide an explicit python2-stevedore subpackage.
+
 * Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.8.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
 
