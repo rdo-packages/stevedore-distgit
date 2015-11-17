@@ -4,7 +4,7 @@
 
 Name:           python-stevedore
 Version:        1.8.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -39,7 +39,7 @@ Manage dynamic plugins for Python applications
 %package -n python2-stevedore
 Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
-%{?python_provide:%python_provide python2-%{module}}
+%{?python_provide:%python_provide python2-stevedore}
 
 Requires:       python2-setuptools
 Requires:       python-six
@@ -52,7 +52,7 @@ Manage dynamic plugins for Python applications
 %package -n python3-stevedore
 Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
-%{?python_provide:%python_provide python3-%{module}}
+%{?python_provide:%python_provide python3-stevedore}
 
 Requires:       python3-setuptools
 Requires:       python3-six
@@ -117,6 +117,9 @@ popd
 %endif
 
 %changelog
+* Tue Nov 17 2015 Ralph Bean <rbean@redhat.com> - 1.8.0-4
+- Fix invocation of python_provide macro.  Typo.  Sorry!
+
 * Mon Nov 16 2015 Ralph Bean <rbean@redhat.com> - 1.8.0-3
 - Provide an explicit python2-stevedore subpackage.
 
