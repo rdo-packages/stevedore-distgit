@@ -4,7 +4,7 @@
 
 Name:           python-stevedore
 Version:        1.8.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -117,6 +117,9 @@ popd
 %endif
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.8.0-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Tue Nov 17 2015 Ralph Bean <rbean@redhat.com> - 1.8.0-4
 - Fix invocation of python_provide macro.  Typo.  Sorry!
 
