@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-89d0198d0351fd00b6739f1fde198b21c1892e2b       	stevedore-distgit-core
-0a31b2feeb2bbf262f29a22fd7a977c275e22699        	stevedore-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+0a31b2feeb2bbf262f29a22fd7a977c275e22699	openstack/stevedore-distgit-ptl
+89d0198d0351fd00b6739f1fde198b21c1892e2b	stevedore-distgit-core
+global:Registered-Users                 	Registered Users
