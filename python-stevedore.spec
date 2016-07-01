@@ -14,7 +14,7 @@ Source0:        http://pypi.python.org/packages/source/s/stevedore/stevedore-%{v
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
-BuildRequires:  python2-setuptools
+BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
 BuildRequires:  python-mock
 BuildRequires:  python-six
@@ -41,7 +41,7 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 %{?python_provide:%python_provide python2-stevedore}
 
-Requires:       python2-setuptools
+Requires:       python-setuptools
 Requires:       python-six
 Requires:       python-pbr
 
