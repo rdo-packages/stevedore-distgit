@@ -5,8 +5,8 @@
 %endif
 
 Name:           python-stevedore
-Version:        XXX
-Release:        XXX
+Version:        1.17.1
+Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -119,3 +119,6 @@ popd
 %endif
 
 %changelog
+* Tue Sep 06 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.17.1-1
+- Update to 1.17.1
+
