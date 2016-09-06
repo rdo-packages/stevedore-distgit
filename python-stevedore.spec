@@ -1,3 +1,5 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 %if 0%{?fedora}
 %global with_python3 1
 %endif
@@ -10,7 +12,7 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Languages
 License:        ASL 2.0
 URL:            https://github.com/dreamhost/stevedore
-Source0:        http://pypi.python.org/packages/source/s/stevedore/stevedore-%{version}.tar.gz
+Source0:        https://pypi.io/packages/source/s/stevedore/stevedore-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
