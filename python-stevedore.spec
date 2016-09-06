@@ -6,7 +6,7 @@
 
 Name:           python-stevedore
 Version:        1.12.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -119,6 +119,9 @@ popd
 %endif
 
 %changelog
+* Tue Sep  6 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 1.12.0-2
+- Adapt to latest python3 guidelines
+
 * Wed Mar 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.12.0-
 - Update to 1.12.0
 
