@@ -1,8 +1,8 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 %if 0%{?fedora}
 %global with_python3 1
 %endif
-
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-stevedore
 Version:        1.12.0
@@ -12,10 +12,10 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Languages
 License:        ASL 2.0
 URL:            https://github.com/dreamhost/stevedore
-Source0:        http://pypi.python.org/packages/source/s/stevedore/stevedore-%{version}.tar.gz
+Source0:        https://pypi.io/packages/source/s/stevedore/stevedore-%{version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  python-devel
+BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
 BuildRequires:  python-mock
@@ -23,9 +23,6 @@ BuildRequires:  python-six
 BuildRequires:  python-testrepository
 #BuildRequires:  python-discover
 #BuildRequires:  python-oslotest
-
-Requires:       python-setuptools
-Requires:       python-six
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
@@ -41,13 +38,27 @@ BuildRequires:  python3-six
 %description
 Manage dynamic plugins for Python applications
 
+%package -n python2-stevedore
+Summary:        Manage dynamic plugins for Python applications
+Group:          Development/Libraries
+%{?python_provide:%python_provide python2-stevedore}
+
+Requires:       python-setuptools
+Requires:       python-six
+Requires:       python-pbr
+
+%description -n python2-stevedore
+Manage dynamic plugins for Python applications
+
 %if 0%{?with_python3}
 %package -n python3-stevedore
 Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
+%{?python_provide:%python_provide python3-stevedore}
 
 Requires:       python3-setuptools
-Requires:       python-six
+Requires:       python3-six
+Requires:       python3-pbr
 
 %description -n python3-stevedore
 Manage dynamic plugins for Python applications
@@ -56,13 +67,16 @@ Manage dynamic plugins for Python applications
 %prep
 %setup -q -n stevedore-%{upstream_version}
 
+# let RPM handle deps
+rm -f requirements.txt
+
 %if 0%{?with_python3}
 rm -rf %{py3dir}
 cp -a . %{py3dir}
 %endif
 
 %build
-%{__python} setup.py build
+%{__python2} setup.py build
 
 %if 0%{?with_python3}
 pushd %{py3dir}
@@ -77,7 +91,7 @@ pushd %{py3dir}
 popd
 %endif
 
-%{__python} setup.py install --skip-build --root %{buildroot}
+%{__python2} setup.py install --skip-build --root %{buildroot}
 
 %check
 #TODO: reenable when commented test requirements above are available
@@ -90,14 +104,16 @@ popd
 #popd
 #%endif
 
-%files
-%doc README.rst LICENSE
-%{python_sitelib}/stevedore
-%{python_sitelib}/stevedore-*.egg-info
+%files -n python2-stevedore
+%license LICENSE
+%doc README.rst
+%{python2_sitelib}/stevedore
+%{python2_sitelib}/stevedore-*.egg-info
 
 %if 0%{?with_python3}
 %files -n python3-stevedore
-%doc README.rst LICENSE
+%license LICENSE
+%doc README.rst
 %{python3_sitelib}/stevedore
 %{python3_sitelib}/stevedore-*.egg-info
 %endif
