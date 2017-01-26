@@ -1,6 +1,6 @@
 # UUID                                  	Group Name
 #
 0a31b2feeb2bbf262f29a22fd7a977c275e22699	openstack/stevedore-distgit-ptl
-89d0198d0351fd00b6739f1fde198b21c1892e2b	openstack/stevedore-distgit-core
 63673ea7f2ae6a5666566b1ea9f14e473d00f5a9	rdo-core
+89d0198d0351fd00b6739f1fde198b21c1892e2b	openstack/stevedore-distgit-core
 global:Registered-Users                 	Registered Users
