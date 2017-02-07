@@ -5,8 +5,8 @@
 %endif
 
 Name:           python-stevedore
-Version:        XXX
-Release:        XXX
+Version:        1.20.0
+Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -119,3 +119,6 @@ popd
 %endif
 
 %changelog
+* Tue Feb 07 2017 Alfredo Moralejo <amoralej@redhat.com> 1.20.0-1
+- Update to 1.20.0
+
