@@ -11,8 +11,8 @@ Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
 License:        ASL 2.0
-URL:            https://github.com/dreamhost/stevedore
-Source0:        https://pypi.io/packages/source/s/stevedore/stevedore-%{version}.tar.gz
+URL:            https://github.com/openstack/stevedore
+Source0:        https://tarballs.openstack.org/stevedore/stevedore-%{upstream_version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
