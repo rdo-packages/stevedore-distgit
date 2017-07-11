@@ -5,7 +5,7 @@
 %endif
 
 Name:           python-stevedore
-Version:        1.20.0
+Version:        1.20.1
 Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
@@ -119,6 +119,9 @@ popd
 %endif
 
 %changelog
+* Tue Jul 11 2017 rdo-trunk <javier.pena@redhat.com> 1.20.1-1
+- Update to 1.20.1
+
 * Tue Feb 07 2017 Alfredo Moralejo <amoralej@redhat.com> 1.20.0-1
 - Update to 1.20.0
 
