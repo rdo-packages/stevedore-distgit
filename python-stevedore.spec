@@ -43,7 +43,6 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 %{?python_provide:%python_provide python2-stevedore}
 
-Requires:       python-setuptools
 Requires:       python-six
 Requires:       python-pbr
 
@@ -56,7 +55,6 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 %{?python_provide:%python_provide python3-stevedore}
 
-Requires:       python3-setuptools
 Requires:       python3-six
 Requires:       python3-pbr
 
