@@ -23,6 +23,7 @@ BuildRequires:  python-pbr
 BuildRequires:  python-mock
 BuildRequires:  python-six
 BuildRequires:  python-testrepository
+BuildRequires:  openstack-macros
 #BuildRequires:  python-discover
 #BuildRequires:  python-oslotest
 
@@ -68,7 +69,7 @@ Requires:       python3-pbr
 %setup -q -n stevedore-%{upstream_version}
 
 # let RPM handle deps
-rm -f requirements.txt
+%py_req_cleanup
 
 %if 0%{?with_python3}
 rm -rf %{py3dir}
