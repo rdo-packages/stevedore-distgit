@@ -4,6 +4,8 @@
 %global with_python3 1
 %endif
 
+%global common_desc Manage dynamic plugins for Python applications
+
 Name:           python-stevedore
 Version:        XXX
 Release:        XXX
@@ -36,7 +38,7 @@ BuildRequires:  python3-six
 %endif
 
 %description
-Manage dynamic plugins for Python applications
+%{common_desc}
 
 %package -n python2-stevedore
 Summary:        Manage dynamic plugins for Python applications
@@ -47,7 +49,7 @@ Requires:       python-six
 Requires:       python-pbr
 
 %description -n python2-stevedore
-Manage dynamic plugins for Python applications
+%{common_desc}
 
 %if 0%{?with_python3}
 %package -n python3-stevedore
@@ -59,7 +61,7 @@ Requires:       python3-six
 Requires:       python3-pbr
 
 %description -n python3-stevedore
-Manage dynamic plugins for Python applications
+%{common_desc}
 %endif
 
 %prep
