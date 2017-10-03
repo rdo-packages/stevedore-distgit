@@ -27,8 +27,6 @@ BuildRequires:  python2-testrepository
 %else
 BuildRequires:  python-testrepository
 %endif
-#BuildRequires:  python2-discover
-#BuildRequires:  python2-oslotest
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
@@ -36,9 +34,6 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
 BuildRequires:  python3-mock
 BuildRequires:  python3-six
-#BuildRequires:  python3-testrepository
-#BuildRequires:  python3-discover
-#BuildRequires:  python3-oslotest
 %endif
 
 %description
@@ -98,15 +93,10 @@ popd
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
 %check
-#TODO: reenable when commented test requirements above are available
-#
-#PYTHONPATH=. nosetests
-#
-#%if 0%{?with_python3}
-#pushd %{py3dir}
-#PYTHONPATH=. nosetests-%{python3_version}
-#popd
-#%endif
+%if 0%{?with_python3}
+%{__python3} setup.py test
+%endif
+%{__python2} setup.py test
 
 %files -n python2-stevedore
 %license LICENSE
