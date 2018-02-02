@@ -52,6 +52,24 @@
       "revId": "8e3bd670d8d1213ab9c94f2d3040eae416f5bf41",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_488d8e7a",
+        "filename": "python-stevedore.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-02-02T11:22:02Z",
+      "side": 1,
+      "message": "It failed because of python3. It needs fork. I\u0027d suggest to move on with conditional until we can upgrade dependencies.",
+      "parentUuid": "9aa53dc9_6834d2dd",
+      "revId": "8e3bd670d8d1213ab9c94f2d3040eae416f5bf41",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
