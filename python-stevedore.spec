@@ -18,13 +18,17 @@ Source0:        https://tarballs.openstack.org/stevedore/stevedore-%{upstream_ve
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
-BuildRequires:  python-pbr
-BuildRequires:  python-mock
-BuildRequires:  python-six
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-pbr
+BuildRequires:  python2-mock
+BuildRequires:  python2-six
+%if 0%{?fedora} > 0
+BuildRequires:  python2-testrepository
+%else
 BuildRequires:  python-testrepository
-#BuildRequires:  python-discover
-#BuildRequires:  python-oslotest
+%endif
+#BuildRequires:  python2-discover
+#BuildRequires:  python2-oslotest
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
@@ -45,8 +49,8 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 %{?python_provide:%python_provide python2-stevedore}
 
-Requires:       python-six
-Requires:       python-pbr
+Requires:       python2-six
+Requires:       python2-pbr
 
 %description -n python2-stevedore
 %{common_desc}
