@@ -16,6 +16,24 @@
       "revId": "8e3bd670d8d1213ab9c94f2d3040eae416f5bf41",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_c824feb0",
+        "filename": "python-stevedore.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-02-02T09:40:13Z",
+      "side": 1,
+      "message": "We could probably try to rebuild python-testrepository-0.0.20-10 in CBS. That\u0027d match u-c and would provide python2- package.\n\n@ykarel could you send a review to rdoinfo to test if direct rebuild from fedora is ok?",
+      "parentUuid": "9aa53dc9_940cd243",
+      "revId": "8e3bd670d8d1213ab9c94f2d3040eae416f5bf41",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
