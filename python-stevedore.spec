@@ -22,11 +22,7 @@ BuildRequires:  python2-setuptools
 BuildRequires:  python2-pbr
 BuildRequires:  python2-mock
 BuildRequires:  python2-six
-%if 0%{?fedora} > 0
 BuildRequires:  python2-testrepository
-%else
-BuildRequires:  python-testrepository
-%endif
 #BuildRequires:  python2-discover
 #BuildRequires:  python2-oslotest
 
