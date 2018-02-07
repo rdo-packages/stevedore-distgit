@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_9c3e34b7",
+        "filename": "python-stevedore.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-02-07T07:58:08Z",
+      "side": 1,
+      "message": "%if 0%{?fedora} || 0%{?rhel} \u003e 7 or %if 0%{?fedora} || 0%{?rhel} \u003e 8? so in 8 all packages would have python2- derivatives?",
+      "parentUuid": "9aa53dc9_de595490",
+      "revId": "8e3bd670d8d1213ab9c94f2d3040eae416f5bf41",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_940cd243",
         "filename": "python-stevedore.spec",
         "patchSetId": 1
