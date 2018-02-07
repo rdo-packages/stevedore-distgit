@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_3c2608bb",
+        "filename": "python-stevedore.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-02-07T05:42:45Z",
+      "side": 1,
+      "message": "let\u0027s remove test-requirements.txt as well.",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 5
+      },
+      "revId": "90dffd0e474fdf2e25a931f02125b3f07173a1bf",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_5c1aec6f",
+        "filename": "python-stevedore.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-02-07T05:42:45Z",
+      "side": 1,
+      "message": "should switch to py3dir before running py3 test as it\u0027s being used during build and installation also.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 26
+      },
+      "revId": "90dffd0e474fdf2e25a931f02125b3f07173a1bf",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
