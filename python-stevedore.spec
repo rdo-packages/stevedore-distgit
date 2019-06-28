@@ -119,3 +119,4 @@ popd
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/stevedore/commit/?id=feac47186d79569bb564e18216e07f18ed5ccd8b
