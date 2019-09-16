@@ -7,8 +7,8 @@
 %global common_desc Manage dynamic plugins for Python applications
 
 Name:           python-stevedore
-Version:        XXX
-Release:        XXX
+Version:        1.31.0
+Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -119,3 +119,6 @@ popd
 %endif
 
 %changelog
+* Mon Sep 16 2019 RDO <dev@lists.rdoproject.org> 1.31.0-1
+- Update to 1.31.0
+
