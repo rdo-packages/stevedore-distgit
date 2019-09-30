@@ -1,14 +1,22 @@
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-
+# Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
-%global with_python3 1
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
 %endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
+
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global common_desc Manage dynamic plugins for Python applications
 
 Name:           python-stevedore
 Version:        1.31.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
 Group:          Development/Languages
@@ -17,52 +25,28 @@ URL:            https://github.com/openstack/stevedore
 Source0:        https://tarballs.openstack.org/stevedore/stevedore-%{upstream_version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  python2-devel
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-pbr
-BuildRequires:  python2-mock
-BuildRequires:  python2-six
-BuildRequires:  python2-testrepository
-#BuildRequires:  python2-discover
-#BuildRequires:  python2-oslotest
-
-%if 0%{?with_python3}
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-pbr
-BuildRequires:  python3-mock
-BuildRequires:  python3-six
-#BuildRequires:  python3-testrepository
-#BuildRequires:  python3-discover
-#BuildRequires:  python3-oslotest
-%endif
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-mock
+BuildRequires:  python%{pyver}-six
+BuildRequires:  python%{pyver}-testrepository
+#BuildRequires:  python%{pyver}-discover
+#BuildRequires:  python%{pyver}-oslotest
 
 %description
 %{common_desc}
 
-%package -n python2-stevedore
+%package -n python%{pyver}-stevedore
 Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
-%{?python_provide:%python_provide python2-stevedore}
+%{?python_provide:%python_provide python%{pyver}-stevedore}
 
-Requires:       python2-six
-Requires:       python2-pbr
+Requires:       python%{pyver}-six
+Requires:       python%{pyver}-pbr
 
-%description -n python2-stevedore
+%description -n python%{pyver}-stevedore
 %{common_desc}
-
-%if 0%{?with_python3}
-%package -n python3-stevedore
-Summary:        Manage dynamic plugins for Python applications
-Group:          Development/Libraries
-%{?python_provide:%python_provide python3-stevedore}
-
-Requires:       python3-six
-Requires:       python3-pbr
-
-%description -n python3-stevedore
-%{common_desc}
-%endif
 
 %prep
 %setup -q -n stevedore-%{upstream_version}
@@ -70,28 +54,11 @@ Requires:       python3-pbr
 # let RPM handle deps
 rm -f requirements.txt
 
-%if 0%{?with_python3}
-rm -rf %{py3dir}
-cp -a . %{py3dir}
-%endif
-
 %build
-%{__python2} setup.py build
-
-%if 0%{?with_python3}
-pushd %{py3dir}
-%{__python3} setup.py build
-popd
-%endif
+%{pyver_build}
 
 %install
-%if 0%{?with_python3}
-pushd %{py3dir}
-%{__python3} setup.py install -O1 --skip-build --root=%{buildroot}
-popd
-%endif
-
-%{__python2} setup.py install --skip-build --root %{buildroot}
+%{pyver_install}
 
 %check
 #TODO: reenable when commented test requirements above are available
@@ -104,21 +71,16 @@ popd
 #popd
 #%endif
 
-%files -n python2-stevedore
+%files -n python%{pyver}-stevedore
 %license LICENSE
 %doc README.rst
-%{python2_sitelib}/stevedore
-%{python2_sitelib}/stevedore-*.egg-info
-
-%if 0%{?with_python3}
-%files -n python3-stevedore
-%license LICENSE
-%doc README.rst
-%{python3_sitelib}/stevedore
-%{python3_sitelib}/stevedore-*.egg-info
-%endif
+%{pyver_sitelib}/stevedore
+%{pyver_sitelib}/stevedore-*.egg-info
 
 %changelog
+* Thu Oct 03 2019 Joel Capitao <jcapitao@redhat.com> 1.31.0-2
+- Removed python2 subpackages in no el7 distros
+
 * Mon Sep 16 2019 RDO <dev@lists.rdoproject.org> 1.31.0-1
 - Update to 1.31.0
 
