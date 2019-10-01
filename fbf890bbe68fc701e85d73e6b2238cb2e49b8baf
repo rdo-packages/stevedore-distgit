@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0da22368_9a0a19e4",
+        "filename": "python-stevedore.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-01T09:59:18Z",
+      "side": 1,
+      "message": "this obsoletes can be removed",
+      "revId": "fbf890bbe68fc701e85d73e6b2238cb2e49b8baf",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
