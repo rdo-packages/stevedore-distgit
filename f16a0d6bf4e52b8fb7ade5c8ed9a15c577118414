@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01e0d5be_13200dfc",
+        "filename": "python-stevedore.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-03T10:22:52Z",
+      "side": 1,
+      "message": "updating version instead of release",
+      "range": {
+        "startLine": 18,
+        "startChar": 16,
+        "endLine": 18,
+        "endChar": 17
+      },
+      "revId": "f16a0d6bf4e52b8fb7ade5c8ed9a15c577118414",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
