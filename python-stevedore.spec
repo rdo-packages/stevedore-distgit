@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -25,27 +14,27 @@ URL:            https://github.com/openstack/stevedore
 Source0:        https://tarballs.openstack.org/stevedore/stevedore-%{upstream_version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-setuptools
-BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-mock
-BuildRequires:  python%{pyver}-six
-BuildRequires:  python%{pyver}-testrepository
-#BuildRequires:  python%{pyver}-discover
-#BuildRequires:  python%{pyver}-oslotest
+BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  python3-pbr
+BuildRequires:  python3-mock
+BuildRequires:  python3-six
+BuildRequires:  python3-testrepository
+#BuildRequires:  python3-discover
+#BuildRequires:  python3-oslotest
 
 %description
 %{common_desc}
 
-%package -n python%{pyver}-stevedore
+%package -n python3-stevedore
 Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
-%{?python_provide:%python_provide python%{pyver}-stevedore}
+%{?python_provide:%python_provide python3-stevedore}
 
-Requires:       python%{pyver}-six
-Requires:       python%{pyver}-pbr
+Requires:       python3-six
+Requires:       python3-pbr
 
-%description -n python%{pyver}-stevedore
+%description -n python3-stevedore
 %{common_desc}
 
 %prep
@@ -55,10 +44,10 @@ Requires:       python%{pyver}-pbr
 rm -f requirements.txt
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %install
-%{pyver_install}
+%{py3_install}
 
 %check
 #TODO: reenable when commented test requirements above are available
@@ -71,10 +60,10 @@ rm -f requirements.txt
 #popd
 #%endif
 
-%files -n python%{pyver}-stevedore
+%files -n python3-stevedore
 %license LICENSE
 %doc README.rst
-%{pyver_sitelib}/stevedore
-%{pyver_sitelib}/stevedore-*.egg-info
+%{python3_sitelib}/stevedore
+%{python3_sitelib}/stevedore-*.egg-info
 
 %changelog
