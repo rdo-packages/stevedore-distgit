@@ -33,6 +33,7 @@ Group:          Development/Libraries
 
 Requires:       python3-six
 Requires:       python3-pbr
+Requires:       python3-importlib-metadata
 
 %description -n python3-stevedore
 %{common_desc}
