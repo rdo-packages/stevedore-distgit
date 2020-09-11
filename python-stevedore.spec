@@ -18,7 +18,6 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
 BuildRequires:  python3-mock
-BuildRequires:  python3-six
 BuildRequires:  python3-testrepository
 #BuildRequires:  python3-discover
 #BuildRequires:  python3-oslotest
@@ -31,9 +30,8 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 %{?python_provide:%python_provide python3-stevedore}
 
-Requires:       python3-six
-Requires:       python3-pbr
-Requires:       python3-importlib-metadata
+Requires:       python3-pbr >= 2.0.0
+Requires:       python3-importlib-metadata >= 1.7.0
 
 %description -n python3-stevedore
 %{common_desc}
