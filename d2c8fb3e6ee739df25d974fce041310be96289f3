@@ -22,6 +22,30 @@
       "revId": "d2c8fb3e6ee739df25d974fce041310be96289f3",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e9e4adb5_9f43101d",
+        "filename": "python-stevedore.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2020-10-09T09:54:02Z",
+      "side": 1,
+      "message": "Good point templating the fingerprint too.\nI was also thinking on using other source numbers so that we don\u0027t collide with exisnting ones in other packages when automating this.",
+      "parentUuid": "be9aa505_8047902a",
+      "range": {
+        "startLine": 18,
+        "startChar": 55,
+        "endLine": 18,
+        "endChar": 97
+      },
+      "revId": "d2c8fb3e6ee739df25d974fce041310be96289f3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
