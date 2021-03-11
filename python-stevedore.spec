@@ -1,4 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x5d2d1e4fb8d38e6af76c50d53d4fec30cf5ce3da
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global common_desc Manage dynamic plugins for Python applications
@@ -15,7 +16,7 @@ Source0:        https://tarballs.openstack.org/stevedore/stevedore-%{upstream_ve
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
 Source1:        https://tarballs.openstack.org/stevedore/stevedore-%{upstream_version}.tar.gz.asc
-Source2:        https://releases.openstack.org/_static/0x2426b928085a020d8a90d0d879ab7008d0896c8a.txt
+Source2:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 BuildArch:      noarch
 
