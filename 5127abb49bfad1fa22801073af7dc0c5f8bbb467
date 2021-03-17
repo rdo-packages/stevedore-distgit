@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8cd29258_6d302c6d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2021-03-17T09:42:36Z",
+      "side": 1,
+      "message": "I guess this should be \u003e32. Anyway, merging it.",
+      "range": {
+        "startLine": 7,
+        "startChar": 66,
+        "endLine": 7,
+        "endChar": 67
+      },
+      "revId": "5127abb49bfad1fa22801073af7dc0c5f8bbb467",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
