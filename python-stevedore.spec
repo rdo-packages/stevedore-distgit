@@ -41,7 +41,6 @@ Summary:        Manage dynamic plugins for Python applications
 Group:          Development/Libraries
 %{?python_provide:%python_provide python3-stevedore}
 
-Requires:       python3-pbr >= 2.0.0
 %if (0%{?fedora} && 0%{?fedora} < 32) || (0%{?rhel} && 0%{?rhel} < 9)
 Requires:       python3-importlib-metadata >= 1.7.0
 %endif
