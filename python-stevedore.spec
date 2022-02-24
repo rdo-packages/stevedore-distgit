@@ -1,11 +1,11 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x5d2d1e4fb8d38e6af76c50d53d4fec30cf5ce3da
+%global sources_gpg_sign 0x01527a34f0d0080f8a5db8d6eb6c5df21b4b6363
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global common_desc Manage dynamic plugins for Python applications
 
 Name:           python-stevedore
-Version:        3.3.0
+Version:        3.3.1
 Release:        1%{?dist}
 Summary:        Manage dynamic plugins for Python applications
 
@@ -81,6 +81,9 @@ rm -f requirements.txt
 %{python3_sitelib}/stevedore-*.egg-info
 
 %changelog
+* Thu Feb 24 2022 RDO <dev@lists.rdoproject.org> 3.3.1-1
+- Update to 3.3.1
+
 * Thu Mar 11 2021 RDO <dev@lists.rdoproject.org> 3.3.0-1
 - Update to 3.3.0
 
