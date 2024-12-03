@@ -1,0 +1,8 @@
+Code-Review+2: Joel Capitao <jcapitao@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Workflow+1: Joel Capitao <jcapitao@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Tue, 03 Dec 2024 11:42:38 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/stevedore-distgit/+/55697
+Project: openstack/stevedore-distgit
+Branch: refs/heads/dalmatian-rdo
